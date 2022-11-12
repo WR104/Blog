@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Day 4: Passport ProcessingPart 1You arrive at the airport only to realize that you grabbed your North Pole Credentials instead of your passport. While these documents are extremely similar, North Pole">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AOTDay_4">
+<meta property="og:url" content="http://github.com/WR104/2022/01/24/AOTDay-4/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="Day 4: Passport ProcessingPart 1You arrive at the airport only to realize that you grabbed your North Pole Credentials instead of your passport. While these documents are extremely similar, North Pole">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-24T08:06:54.000Z">
+<meta property="article:modified_time" content="2022-11-12T08:18:05.290Z">
+<meta property="article:author" content="Zhenyu Jia">
+<meta property="article:tag" content="code">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/Blog/images/david.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/Blog/images/david-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/david-apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>AOTDay_4</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/Blog/2022/01/24/leetcode1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/Blog/2022/01/23/AOTDay-3/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2022/01/24/AOTDay-4/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2022/01/24/AOTDay-4/&text=AOTDay_4"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2022/01/24/AOTDay-4/&is_video=false&description=AOTDay_4"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AOTDay_4&body=Check out this article: http://github.com/WR104/2022/01/24/AOTDay-4/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2022/01/24/AOTDay-4/&name=AOTDay_4&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2022/01/24/AOTDay-4/&t=AOTDay_4"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Day-4-Passport-Processing"><span class="toc-number">1.</span> <span class="toc-text">Day 4: Passport Processing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1"><span class="toc-number">1.1.</span> <span class="toc-text">Part 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2"><span class="toc-number">1.2.</span> <span class="toc-text">Part 2</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        AOTDay_4
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Zhenyu Jia</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-01-24T08:06:54.000Z" itemprop="datePublished">2022-01-24</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/Blog/categories/AdventOfCode/">AdventOfCode</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/Blog/tags/code/" rel="tag">code</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Day-4-Passport-Processing"><a href="#Day-4-Passport-Processing" class="headerlink" title="Day 4: Passport Processing"></a>Day 4: Passport Processing</h1><h2 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h2><p>You arrive at the airport only to realize that you grabbed your North Pole Credentials instead of your passport. While these documents are extremely similar, North Pole Credentials aren’t issued by a country and therefore aren’t actually valid documentation for travel in most of the world.</p>
+<p>It seems like you’re not the only one having problems, though; a very long line has formed for the automatic passport scanners, and the delay could upset your travel itinerary.</p>
+<p>Due to some questionable network security, you realize you might be able to solve both of these problems at the same time.</p>
+<p>The automatic passport scanners are slow because they’re having trouble <strong>detecting which passports have all required fields.</strong> The expected fields are as follows:</p>
+<blockquote>
+<p>-byr (Birth Year)<br>-iyr (Issue Year)<br>-eyr (Expiration Year)<br>-hgt (Height)<br>-hcl (Hair Color)<br>-ecl (Eye Color)<br>-pid (Passport ID)<br>-cid (Country ID)</p>
+</blockquote>
+<p>Passport data is validated in batch files (your puzzle input). Each passport is represented as a sequence of key:value pairs separated by spaces or newlines. Passports are separated by blank lines.</p>
+<p>Here is an example batch file containing four passports:</p>
+<blockquote>
+<p>ecl:gry pid:860033327 eyr:2020 hcl:#fffffd<br>byr:1937 iyr:2017 cid:147 hgt:183cm</p>
+</blockquote>
+<blockquote>
+<p>iyr:2013 ecl:amb cid:350 eyr:2023 pid:028048884<br>hcl:#cfa07d byr:1929</p>
+</blockquote>
+<blockquote>
+<p>hcl:#ae17e1 iyr:2013<br>eyr:2024<br>ecl:brn pid:760753108 byr:1931<br>hgt:179cm</p>
+</blockquote>
+<blockquote>
+<p>hcl:#cfa07d eyr:2025 pid:166559648<br>iyr:2011 ecl:brn hgt:59in</p>
+</blockquote>
+<p>The first passport is <strong>valid</strong> - all eight fields are present. The second passport is <strong>invalid</strong> - it is missing hgt (the Height field).</p>
+<p>The third passport is interesting; the <strong>only missing field</strong> is cid, so it looks like data from North Pole Credentials, not a passport at all! Surely, nobody would mind if you made the system temporarily ignore missing cid fields. Treat this “passport” as <strong>valid</strong>.</p>
+<p>The fourth passport is missing two fields, cid and byr. Missing cid is fine, but missing any other field is not, so this passport is <strong>invalid</strong>.</p>
+<p>According to the above rules, your improved system would report <strong>2</strong> valid passports.</p>
+<p>Count the number of <strong>valid</strong> passports - those that have all required fields. Treat cid as optional. <strong>In your batch file, how many passports are valid?</strong></p>
+<h2 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h2><p>The line is moving more quickly now, but you overhear airport security talking about how passports with invalid data are getting through. Better add some data validation, quick!</p>
+<p>You can continue to ignore the cid field, but each other field has strict rules about what values are valid for automatic validation:</p>
+<blockquote>
+<p>-byr (Birth Year) - four digits; at least 1920 and at most 2002.<br>-iyr (Issue Year) - four digits; at least 2010 and at most 2020.<br>-eyr (Expiration Year) - four digits; at least 2020 and at most 2030.<br>-hgt (Height) - a number followed by either cm or in:<br>-If cm, the number must be at least 150 and at most 193.<br>-If in, the number must be at least 59 and at most 76.<br>-hcl (Hair Color) - a # followed by exactly six characters 0-9 or a-f.<br>-ecl (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.<br>-pid (Passport ID) - a nine-digit number, including leading zeroes.<br>-cid (Country ID) - ignored, missing or not.</p>
+</blockquote>
+<p>Your job is to count the passports where all required fields are both <strong>present</strong> and <strong>valid</strong> according to the above rules. Here are some example values:</p>
+<blockquote>
+<p>byr valid:   2002<br>byr invalid: 2003</p>
+</blockquote>
+<blockquote>
+<p>hgt valid:   60in<br>hgt valid:   190cm<br>hgt invalid: 190in<br>hgt invalid: 190</p>
+</blockquote>
+<blockquote>
+<p>hcl valid:   #123abc<br>hcl invalid: #123abz<br>hcl invalid: 123abc</p>
+</blockquote>
+<blockquote>
+<p>ecl valid:   brn<br>ecl invalid: wat</p>
+</blockquote>
+<blockquote>
+<p>pid valid:   000000001<br>pid invalid: 0123456789</p>
+</blockquote>
+<p>Count the number of <strong>valid</strong> passports - those that have all required fields <strong>and valid values.</strong> Continue to treat cid as optional. <strong>In your batch file, how many passports are valid?</strong></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/Blog/">Home</a></li>
+         
+          <li><a href="/Blog/about/">About</a></li>
+         
+          <li><a href="/Blog/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/WR104">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Day-4-Passport-Processing"><span class="toc-number">1.</span> <span class="toc-text">Day 4: Passport Processing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1"><span class="toc-number">1.1.</span> <span class="toc-text">Part 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2"><span class="toc-number">1.2.</span> <span class="toc-text">Part 2</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2022/01/24/AOTDay-4/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2022/01/24/AOTDay-4/&text=AOTDay_4"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2022/01/24/AOTDay-4/&is_video=false&description=AOTDay_4"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AOTDay_4&body=Check out this article: http://github.com/WR104/2022/01/24/AOTDay-4/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2022/01/24/AOTDay-4/&title=AOTDay_4"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2022/01/24/AOTDay-4/&name=AOTDay_4&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2022/01/24/AOTDay-4/&t=AOTDay_4"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Zhenyu Jia
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/Blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

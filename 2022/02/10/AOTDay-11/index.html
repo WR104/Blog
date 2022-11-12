@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Day 11: Seating SystemPart 1Your plane lands with plenty of time to spare. The final leg of your journey is a ferry that goes directly to the tropical island where you can finally start your vacation.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AOTDay_11">
+<meta property="og:url" content="http://github.com/WR104/2022/02/10/AOTDay-11/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="Day 11: Seating SystemPart 1Your plane lands with plenty of time to spare. The final leg of your journey is a ferry that goes directly to the tropical island where you can finally start your vacation.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-10T08:07:26.000Z">
+<meta property="article:modified_time" content="2022-11-12T09:44:30.029Z">
+<meta property="article:author" content="Zhenyu Jia">
+<meta property="article:tag" content="code">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/Blog/images/david.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/Blog/images/david-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/david-apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>AOTDay_11</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/Blog/2022/07/10/9H1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/Blog/2022/02/09/AOTDay-9/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2022/02/10/AOTDay-11/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2022/02/10/AOTDay-11/&text=AOTDay_11"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2022/02/10/AOTDay-11/&is_video=false&description=AOTDay_11"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AOTDay_11&body=Check out this article: http://github.com/WR104/2022/02/10/AOTDay-11/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2022/02/10/AOTDay-11/&name=AOTDay_11&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2022/02/10/AOTDay-11/&t=AOTDay_11"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Day-11-Seating-System"><span class="toc-number">1.</span> <span class="toc-text">Day 11: Seating System</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1"><span class="toc-number">1.1.</span> <span class="toc-text">Part 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2"><span class="toc-number">1.2.</span> <span class="toc-text">Part 2</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        AOTDay_11
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Zhenyu Jia</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-02-10T08:07:26.000Z" itemprop="datePublished">2022-02-10</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/Blog/categories/AdventOfCode/">AdventOfCode</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/Blog/tags/code/" rel="tag">code</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Day-11-Seating-System"><a href="#Day-11-Seating-System" class="headerlink" title="Day 11: Seating System"></a>Day 11: Seating System</h1><h2 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h2><p>Your plane lands with plenty of time to spare. The final leg of your journey is a ferry that goes directly to the tropical island where you can finally start your vacation. As you reach the waiting area to board the ferry, you realize you’re so early, nobody else has even arrived yet!</p>
+<p>By modeling the process people use to choose (or abandon) their seat in the waiting area, you’re pretty sure you can predict the best place to sit. You make a quick map of the seat layout (your puzzle input).</p>
+<p>The seat layout fits neatly on a grid. Each position is either floor (.), an empty seat (L), or an occupied seat (#). For example, the initial seat layout might look like this:</p>
+<p>L.LL.LL.LL<br>LLLLLLL.LL<br>L.L.L..L..<br>LLLL.LL.LL<br>L.LL.LL.LL<br>L.LLLLL.LL<br>..L.L…..<br>LLLLLLLLLL<br>L.LLLLLL.L<br>L.LLLLL.LL</p>
+<p>Now, you just need to model the people who will be arriving shortly. Fortunately, people are entirely predictable and always follow a simple set of rules. All decisions are based on the <strong>number of occupied seats</strong> adjacent to a given seat (one of the eight positions immediately up, down, left, right, or diagonal from the seat). The following rules are applied to every seat simultaneously:</p>
+<blockquote>
+<p>-If a seat is empty (L) and there are no occupied seats adjacent to it, the seat becomes occupied.<br>-If a seat is occupied (#) and four or more seats adjacent to it are also occupied, the seat becomes empty.<br>-Otherwise, the seat’s state does not change.</p>
+</blockquote>
+<p>Floor (.) never changes; seats don’t move, and nobody sits on the floor.</p>
+<p>After one round of these rules, every seat in the example layout becomes occupied:</p>
+<p>#.##.##.##<br>#######.##<br>#.#.#..#..<br>####.##.##<br>#.##.##.##<br>#.#####.##<br>..#.#…..<br>##########<br>#.######.#<br>#.#####.##<br>After a second round, the seats with four or more occupied adjacent seats become empty again:</p>
+<p>#.LL.L#.##<br>#LLLLLL.L#<br>L.L.L..L..<br>#LLL.LL.L#<br>#.LL.LL.LL<br>#.LLLL#.##<br>..L.L…..<br>#LLLLLLLL#<br>#.LLLLLL.L<br>#.#LLLL.##<br>This process continues for three more rounds:</p>
+<p>#.##.L#.##<br>#L###LL.L#<br>L.#.#..#..<br>#L##.##.L#<br>#.##.LL.LL<br>#.###L#.##<br>..#.#…..<br>#L######L#<br>#.LL###L.L<br>#.#L###.##<br>#.#L.L#.##<br>#LLL#LL.L#<br>L.L.L..#..<br>#LLL.##.L#<br>#.LL.LL.LL<br>#.LL#L#.##<br>..L.L…..<br>#L#LLLL#L#<br>#.LLLLLL.L<br>#.#L#L#.##<br>#.#L.L#.##<br>#LLL#LL.L#<br>L.#.L..#..<br>#L##.##.L#<br>#.#L.LL.LL<br>#.#L#L#.##<br>..L.L…..<br>#L#L##L#L#<br>#.LLLLLL.L<br>#.#L#L#.##</p>
+<p>At this point, something interesting happens: the chaos stabilizes and further applications of these rules cause no seats to change state! Once people stop moving around, you count 37 occupied seats.</p>
+<p>Simulate your seating area by applying the seating rules repeatedly until no seats change state. <strong>How many seats end up occupied?</strong></p>
+<h2 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h2><p>As soon as people start to arrive, you realize your mistake. People don’t just care about adjacent seats - they care about <strong>the first seat they can see</strong> in each of those eight directions!</p>
+<p>Now, instead of considering just the eight immediately adjacent seats, consider the <strong>first seat</strong> in each of those eight directions. For example, the empty seat below would see <strong>eight</strong> occupied seats:</p>
+<p>…….#.<br>…#…..<br>.#…….<br>………<br>..#L….#<br>….#….<br>………<br>#……..<br>…#…..</p>
+<p>The leftmost empty seat below would only see <strong>one</strong> empty seat, but cannot see any of the occupied ones:</p>
+<p>………….<br>.L.L.#.#.#.#.<br>………….</p>
+<p>The empty seat below would see <strong>no</strong> occupied seats:</p>
+<p>.##.##.<br>#.#.#.#<br>##…##<br>…L…<br>##…##<br>#.#.#.#<br>.##.##.</p>
+<p>Also, people seem to be more tolerant than you expected: it now takes <strong>five or more</strong> visible occupied seats for an occupied seat to become empty (rather than <strong>four or more</strong> from the previous rules). The other rules still apply: empty seats that see no occupied seats become occupied, seats matching no rule don’t change, and floor never changes.</p>
+<p>Given the same starting layout as above, these new rules cause the seating area to shift around as follows:</p>
+<p>L.LL.LL.LL<br>LLLLLLL.LL<br>L.L.L..L..<br>LLLL.LL.LL<br>L.LL.LL.LL<br>L.LLLLL.LL<br>..L.L…..<br>LLLLLLLLLL<br>L.LLLLLL.L<br>L.LLLLL.LL<br>#.##.##.##<br>#######.##<br>#.#.#..#..<br>####.##.##<br>#.##.##.##<br>#.#####.##<br>..#.#…..<br>##########<br>#.######.#<br>#.#####.##<br>#.LL.LL.L#<br>#LLLLLL.LL<br>L.L.L..L..<br>LLLL.LL.LL<br>L.LL.LL.LL<br>L.LLLLL.LL<br>..L.L…..<br>LLLLLLLLL#<br>#.LLLLLL.L<br>#.LLLLL.L#<br>#.L#.##.L#<br>#L#####.LL<br>L.#.#..#..<br>##L#.##.##<br>#.##.#L.##<br>#.#####.#L<br>..#.#…..<br>LLL####LL#<br>#.L#####.L<br>#.L####.L#<br>#.L#.L#.L#<br>#LLLLLL.LL<br>L.L.L..#..<br>##LL.LL.L#<br>L.LL.LL.L#<br>#.LLLLL.LL<br>..L.L…..<br>LLLLLLLLL#<br>#.LLLLL#.L<br>#.L#LL#.L#<br>#.L#.L#.L#<br>#LLLLLL.LL<br>L.L.L..#..<br>##L#.#L.L#<br>L.L#.#L.L#<br>#.L####.LL<br>..#.#…..<br>LLL###LLL#<br>#.LLLLL#.L<br>#.L#LL#.L#<br>#.L#.L#.L#<br>#LLLLLL.LL<br>L.L.L..#..<br>##L#.#L.L#<br>L.L#.LL.L#<br>#.LLLL#.LL<br>..#.L…..<br>LLL###LLL#<br>#.LLLLL#.L<br>#.L#LL#.L#</p>
+<p>Again, at this point, people stop shifting around and the seating area reaches equilibrium. Once this occurs, you count <strong>26</strong> occupied seats.</p>
+<p>Given the new visibility method and the rule change for occupied seats becoming empty, once equilibrium is reached, <strong>how many seats end up occupied?</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang3.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Day11</span> &#123;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException &#123;</span><br><span class="line">        List&lt;String&gt; seats = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;Days/Day11.txt&quot;</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (s.hasNextLine()) &#123;</span><br><span class="line">            seats.add(<span class="string">&quot;$&quot;</span>+s.nextLine()+<span class="string">&quot;$&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ROW</span> <span class="operator">=</span> seats.get(<span class="number">0</span>).length()-<span class="number">2</span>;</span><br><span class="line">        String temp=<span class="string">&quot;$$&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;ROW;i++)</span><br><span class="line">        	temp+=<span class="string">&quot;$&quot;</span>;</span><br><span class="line">        seats.add(<span class="number">0</span>,temp);</span><br><span class="line">        seats.add(temp);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*List&lt;String&gt; newS = newList(seats);</span></span><br><span class="line"><span class="comment">        </span></span><br><span class="line"><span class="comment">        while(!equalLists(newS,newList(newS))) &#123;</span></span><br><span class="line"><span class="comment">        	newS=newList(newS);</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line">        <span class="keyword">for</span>(String str:seats)</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        List&lt;String&gt; newS = newList2(seats);</span><br><span class="line">        <span class="keyword">while</span>(!equalLists(newS,newList2(newS)))</span><br><span class="line">        	newS=newList(newS);</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(String str:newS)</span><br><span class="line">        	count += StringUtils.countMatches(str, <span class="string">&quot;#&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(count);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title function_">newList</span><span class="params">(List&lt;String&gt; seats)</span>&#123;</span><br><span class="line">    	List&lt;String&gt; newSeats = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    	<span class="type">int</span> <span class="variable">ROW</span> <span class="operator">=</span> seats.get(<span class="number">0</span>).length()-<span class="number">2</span>;</span><br><span class="line">        newSeats.add(seats.get(<span class="number">0</span>));</span><br><span class="line">        String temp=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> line=<span class="number">1</span>;line&lt;seats.size()-<span class="number">1</span>;line++) &#123;</span><br><span class="line">        	<span class="type">int</span> ajcSeat=<span class="number">0</span>;</span><br><span class="line">        	<span class="type">boolean</span> isTrue=<span class="literal">true</span>;</span><br><span class="line">        	</span><br><span class="line">        	<span class="keyword">for</span>(<span class="type">int</span> row=<span class="number">1</span>;row&lt;=ROW;row++) &#123;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			isTrue=<span class="literal">false</span>;</span><br><span class="line">	        			ajcSeat++;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        	</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;L&#x27;</span>) &#123;</span><br><span class="line">	        			<span class="keyword">if</span>(isTrue==<span class="literal">true</span>)</span><br><span class="line">	        				temp+=<span class="string">&quot;#&quot;</span>;</span><br><span class="line">	        			<span class="keyword">else</span></span><br><span class="line">	        				temp+=<span class="string">&quot;L&quot;</span>;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">	        			<span class="keyword">if</span>(ajcSeat&gt;=<span class="number">4</span>)</span><br><span class="line">	        				temp+=<span class="string">&quot;L&quot;</span>;</span><br><span class="line">	        			<span class="keyword">else</span></span><br><span class="line">	        				temp+=<span class="string">&quot;#&quot;</span>;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">	        			temp+=<span class="string">&quot;.&quot;</span>;</span><br><span class="line">	        		&#125;</span><br><span class="line">	        		ajcSeat=<span class="number">0</span>;</span><br><span class="line">	        		isTrue=<span class="literal">true</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        	newSeats.add(<span class="string">&quot;.&quot;</span>+temp+<span class="string">&quot;.&quot;</span>);</span><br><span class="line">        	temp=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        newSeats.add(seats.get(<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">return</span> newSeats;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title function_">newList2</span><span class="params">(List&lt;String&gt; seats)</span>&#123;</span><br><span class="line">    	List&lt;String&gt; newSeats = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    	<span class="type">int</span> <span class="variable">ROW</span> <span class="operator">=</span> seats.get(<span class="number">0</span>).length()-<span class="number">2</span>;</span><br><span class="line">        newSeats.add(seats.get(<span class="number">0</span>));</span><br><span class="line">        String temp=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> line=<span class="number">1</span>;line&lt;seats.size()-<span class="number">1</span>;line++) &#123;</span><br><span class="line">        	<span class="type">int</span> ajcSeat=<span class="number">0</span>;</span><br><span class="line">        	<span class="type">boolean</span> isTrue=<span class="literal">true</span>;<span class="comment">//true=no adjacent, false=adjacent</span></span><br><span class="line">        	</span><br><span class="line">        	<span class="keyword">for</span>(<span class="type">int</span> row=<span class="number">1</span>;row&lt;=ROW;row++) &#123;</span><br><span class="line">        		isTrue=upLeft(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		isTrue=up(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		isTrue=upRight(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		isTrue=right(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		isTrue=left(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		isTrue=downRight(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		isTrue=down(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		isTrue=downLeft(seats, line,row);</span><br><span class="line">        		<span class="keyword">if</span>(!isTrue)</span><br><span class="line">        			ajcSeat++;</span><br><span class="line">        		</span><br><span class="line">        		<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;L&#x27;</span>) &#123;</span><br><span class="line">        			<span class="keyword">if</span>(isTrue==<span class="literal">true</span>)</span><br><span class="line">        				temp+=<span class="string">&quot;#&quot;</span>;</span><br><span class="line">        			<span class="keyword">else</span></span><br><span class="line">        				temp+=<span class="string">&quot;L&quot;</span>;</span><br><span class="line">        		&#125;</span><br><span class="line">        		<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">        			<span class="keyword">if</span>(ajcSeat&gt;=<span class="number">4</span>)</span><br><span class="line">        				temp+=<span class="string">&quot;L&quot;</span>;</span><br><span class="line">        			<span class="keyword">else</span></span><br><span class="line">        				temp+=<span class="string">&quot;#&quot;</span>;</span><br><span class="line">        		&#125;</span><br><span class="line">        		<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">        			temp+=<span class="string">&quot;.&quot;</span>;</span><br><span class="line">        		&#125;</span><br><span class="line">        		ajcSeat=<span class="number">0</span>;</span><br><span class="line">        		isTrue=<span class="literal">true</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        	newSeats.add(<span class="string">&quot;.&quot;</span>+temp+<span class="string">&quot;.&quot;</span>);</span><br><span class="line">        	temp=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        newSeats.add(seats.get(<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">return</span> newSeats;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">upLeft</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y;</span><br><span class="line">    	<span class="keyword">if</span>(row&lt;=<span class="number">0</span>||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> upLeft(seats, line-<span class="number">1</span>,row-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">up</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y;</span><br><span class="line">    	<span class="keyword">if</span>(row&lt;=<span class="number">0</span>||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> up(seats, line-<span class="number">1</span>,row);</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">upRight</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y;</span><br><span class="line">    	<span class="keyword">if</span>(row&lt;=<span class="number">0</span>||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> upRight(seats, line-<span class="number">1</span>,row+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">right</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y;</span><br><span class="line">    	<span class="keyword">if</span>(row&gt;seats.get(<span class="number">0</span>).length()||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> right(seats,line,row+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">left</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y-<span class="number">1</span>;</span><br><span class="line">    	<span class="keyword">if</span>(row&lt;=<span class="number">0</span>||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(row&lt;=<span class="number">0</span>||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line).charAt(row)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> left(seats, line,row);</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">downLeft</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y;</span><br><span class="line">    	<span class="keyword">if</span>(row&lt;=<span class="number">0</span>||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row-<span class="number">1</span>)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> downLeft(seats, line+<span class="number">1</span>,row-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125; </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">down</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line+<span class="number">1</span>).charAt(row)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> down(seats, line+<span class="number">1</span>,row);</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">downRight</span><span class="params">(List&lt;String&gt; seats, <span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">    	<span class="type">int</span> line=x,row=y;</span><br><span class="line">    	<span class="keyword">if</span>(row&gt;=seats.get(<span class="number">0</span>).length()||line&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">if</span>(seats.get(line-<span class="number">1</span>).charAt(row+<span class="number">1</span>)==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">    		<span class="keyword">return</span> downRight(seats, line-<span class="number">1</span>,row+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">equalLists</span><span class="params">(List&lt;String&gt; s1, List&lt;String&gt; s2)</span> &#123;</span><br><span class="line">    	<span class="keyword">if</span>(s1.size()!=s2.size())</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s1.size();i++) &#123;</span><br><span class="line">    		<span class="keyword">if</span>(!s1.get(i).equals(s2.get(i)))</span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/Blog/">Home</a></li>
+         
+          <li><a href="/Blog/about/">About</a></li>
+         
+          <li><a href="/Blog/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/WR104">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Day-11-Seating-System"><span class="toc-number">1.</span> <span class="toc-text">Day 11: Seating System</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1"><span class="toc-number">1.1.</span> <span class="toc-text">Part 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2"><span class="toc-number">1.2.</span> <span class="toc-text">Part 2</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2022/02/10/AOTDay-11/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2022/02/10/AOTDay-11/&text=AOTDay_11"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2022/02/10/AOTDay-11/&is_video=false&description=AOTDay_11"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AOTDay_11&body=Check out this article: http://github.com/WR104/2022/02/10/AOTDay-11/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2022/02/10/AOTDay-11/&title=AOTDay_11"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2022/02/10/AOTDay-11/&name=AOTDay_11&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2022/02/10/AOTDay-11/&t=AOTDay_11"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Zhenyu Jia
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/Blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
