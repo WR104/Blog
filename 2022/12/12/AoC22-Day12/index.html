@@ -9,12 +9,12 @@
     <meta name="description" content="Day 12: Hill Climbing Algorithmhttps:&#x2F;&#x2F;adventofcode.com&#x2F;2022&#x2F;day&#x2F;12 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AoC22_Day12">
-<meta property="og:url" content="http://github.com/WR104/2023/12/12/AoC22-Day12/index.html">
+<meta property="og:url" content="http://github.com/WR104/2022/12/12/AoC22-Day12/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Day 12: Hill Climbing Algorithmhttps:&#x2F;&#x2F;adventofcode.com&#x2F;2022&#x2F;day&#x2F;12 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-12-12T09:22:09.000Z">
-<meta property="article:modified_time" content="2023-01-10T09:23:47.431Z">
+<meta property="article:published_time" content="2022-12-12T09:22:09.000Z">
+<meta property="article:modified_time" content="2023-01-10T09:32:35.870Z">
 <meta property="article:author" content="Zhenyu Jia">
 <meta property="article:tag" content="code">
 <meta name="twitter:card" content="summary">
@@ -75,10 +75,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post" href="/Blog/2023/12/13/AoC22-Day13/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post" href="/Blog/2022/12/13/AoC22-Day13/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post" href="/Blog/2022/12/14/AoC22-Day14/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/Blog/2022/12/11/AoC22-Day11/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -91,17 +91,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2023/12/12/AoC22-Day12/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&text=AoC22_Day12"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&is_video=false&description=AoC22_Day12"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=AoC22_Day12&body=Check out this article: http://github.com/WR104/2023/12/12/AoC22-Day12/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&name=AoC22_Day12&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2023/12/12/AoC22-Day12/&t=AoC22_Day12"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2022/12/12/AoC22-Day12/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&text=AoC22_Day12"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&is_video=false&description=AoC22_Day12"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AoC22_Day12&body=Check out this article: http://github.com/WR104/2022/12/12/AoC22-Day12/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&name=AoC22_Day12&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2022/12/12/AoC22-Day12/&t=AoC22_Day12"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -130,7 +130,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-12-12T09:22:09.000Z" itemprop="datePublished">2023-12-12</time>
+        <time datetime="2022-12-12T09:22:09.000Z" itemprop="datePublished">2022-12-12</time>
         
       
     </div>
@@ -182,17 +182,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2023/12/12/AoC22-Day12/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&text=AoC22_Day12"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&is_video=false&description=AoC22_Day12"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=AoC22_Day12&body=Check out this article: http://github.com/WR104/2023/12/12/AoC22-Day12/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2023/12/12/AoC22-Day12/&name=AoC22_Day12&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2023/12/12/AoC22-Day12/&t=AoC22_Day12"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2022/12/12/AoC22-Day12/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&text=AoC22_Day12"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&is_video=false&description=AoC22_Day12"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AoC22_Day12&body=Check out this article: http://github.com/WR104/2022/12/12/AoC22-Day12/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&title=AoC22_Day12"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2022/12/12/AoC22-Day12/&name=AoC22_Day12&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2022/12/12/AoC22-Day12/&t=AoC22_Day12"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
