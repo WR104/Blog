@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="76. Minimum Window SubstringGiven two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode76">
+<meta property="og:url" content="http://github.com/WR104/2023/03/02/Leetcode76/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="76. Minimum Window SubstringGiven two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-03T06:36:19.000Z">
+<meta property="article:modified_time" content="2023-03-04T06:37:38.400Z">
+<meta property="article:author" content="Zhenyu Jia">
+<meta property="article:tag" content="code">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/Blog/images/david.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/Blog/images/david-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/david-apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Leetcode76</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Posts</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/Blog/2023/03/01/Leetcode75/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2023/03/02/Leetcode76/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2023/03/02/Leetcode76/&text=Leetcode76"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2023/03/02/Leetcode76/&is_video=false&description=Leetcode76"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Leetcode76&body=Check out this article: http://github.com/WR104/2023/03/02/Leetcode76/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2023/03/02/Leetcode76/&name=Leetcode76&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2023/03/02/Leetcode76/&t=Leetcode76"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#76-Minimum-Window-Substring"><span class="toc-number">1.</span> <span class="toc-text">76. Minimum Window Substring</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Leetcode76
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Zhenyu Jia</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-03-03T06:36:19.000Z" itemprop="datePublished">2023-03-02</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/Blog/categories/leetcode/">leetcode</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/Blog/tags/code/" rel="tag">code</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="76-Minimum-Window-Substring"><a href="#76-Minimum-Window-Substring" class="headerlink" title="76. Minimum Window Substring"></a>76. Minimum Window Substring</h1><p>Given two strings s and t of lengths m and n respectively, return the minimum window substring</p>
+<p>of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string “”.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">min_window</span>(s: <span class="type">String</span>, t: <span class="type">String</span>) <span class="punctuation">-&gt;</span> <span class="type">String</span> &#123;</span><br><span class="line">	<span class="keyword">let</span> (<span class="keyword">mut</span> left, <span class="keyword">mut</span> right) = (<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">let</span> (<span class="keyword">mut</span> found, <span class="keyword">mut</span> count) = (<span class="number">0</span>, <span class="built_in">vec!</span>[<span class="number">0</span>; <span class="number">128</span>]);</span><br><span class="line">	<span class="keyword">let</span> <span class="variable">s</span> = s.<span class="title function_ invoke__">chars</span>().collect::&lt;<span class="type">Vec</span>&lt;_&gt;&gt;();</span><br><span class="line">	<span class="keyword">let</span> <span class="variable">t</span> = t.<span class="title function_ invoke__">chars</span>().collect::&lt;<span class="type">Vec</span>&lt;_&gt;&gt;();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans</span> = <span class="type">String</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">	<span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans_len</span> = s.<span class="title function_ invoke__">len</span>() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> <span class="variable">c</span> <span class="keyword">in</span> &amp;t &#123;</span><br><span class="line">		count[*c <span class="keyword">as</span> <span class="type">usize</span>] += <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> right &lt; s.<span class="title function_ invoke__">len</span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> count[s[right] <span class="keyword">as</span> <span class="type">usize</span>] &gt; <span class="number">0</span> &#123;</span><br><span class="line">			found += <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		count[s[right] <span class="keyword">as</span> <span class="type">usize</span>] -= <span class="number">1</span>;</span><br><span class="line">		right += <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> found == t.<span class="title function_ invoke__">len</span>() &#123;</span><br><span class="line">			<span class="keyword">if</span> right - left &lt; ans_len &#123;</span><br><span class="line">				ans = s[left..right].<span class="title function_ invoke__">iter</span>().<span class="title function_ invoke__">collect</span>();</span><br><span class="line">				ans_len = right - left;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			count[s[left] <span class="keyword">as</span> <span class="type">usize</span>] += <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> count[s[left] <span class="keyword">as</span> <span class="type">usize</span>] &gt; <span class="number">0</span> &#123;</span><br><span class="line">				found -= <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			left += <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#[cfg(test)]</span></span><br><span class="line"><span class="keyword">mod</span> tests &#123;</span><br><span class="line">    <span class="keyword">use</span> super::*;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#[test]</span></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">test_76</span>() &#123;</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;ADOBECODEBANC&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;ABC&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;BANC&quot;</span>.<span class="title function_ invoke__">to_string</span>());</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;a&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;a&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;a&quot;</span>);</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;a&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;aa&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;&quot;</span>);</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;a&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;b&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;&quot;</span>);</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;ab&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;a&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;a&quot;</span>);</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;abc&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;bc&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;bc&quot;</span>);</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;aabaabaaab&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;bb&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;baab&quot;</span>);</span><br><span class="line">        <span class="built_in">assert_eq!</span>(<span class="title function_ invoke__">min_window</span>(<span class="string">&quot;bba&quot;</span>.<span class="title function_ invoke__">to_string</span>(), <span class="string">&quot;ab&quot;</span>.<span class="title function_ invoke__">to_string</span>()), <span class="string">&quot;ba&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/Blog/">Home</a></li>
+         
+          <li><a href="/Blog/about/">About</a></li>
+         
+          <li><a href="/Blog/archives/">Posts</a></li>
+         
+          <li><a href="http://github.com/WR104">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#76-Minimum-Window-Substring"><span class="toc-number">1.</span> <span class="toc-text">76. Minimum Window Substring</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2023/03/02/Leetcode76/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2023/03/02/Leetcode76/&text=Leetcode76"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2023/03/02/Leetcode76/&is_video=false&description=Leetcode76"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Leetcode76&body=Check out this article: http://github.com/WR104/2023/03/02/Leetcode76/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2023/03/02/Leetcode76/&title=Leetcode76"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2023/03/02/Leetcode76/&name=Leetcode76&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2023/03/02/Leetcode76/&t=Leetcode76"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2023
+    Zhenyu Jia
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Posts</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/Blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
