@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="— Day 13: Claw Contraption — https:&#x2F;&#x2F;adventofcode.com&#x2F;2024&#x2F;day&#x2F;9  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AoC24-Day13">
+<meta property="og:url" content="http://github.com/WR104/2024/12/13/AoC24-Day13/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="— Day 13: Claw Contraption — https:&#x2F;&#x2F;adventofcode.com&#x2F;2024&#x2F;day&#x2F;9  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-13T17:39:48.000Z">
+<meta property="article:modified_time" content="2025-01-30T06:43:47.502Z">
+<meta property="article:author" content="Zhenyu Jia">
+<meta property="article:tag" content="code">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/Blog/images/david.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/Blog/images/david-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/david-apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>AoC24-Day13</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Posts</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/Blog/2024/12/14/AoC24-Day14/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/Blog/2024/12/12/AoC24-Day12/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2024/12/13/AoC24-Day13/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&text=AoC24-Day13"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&is_video=false&description=AoC24-Day13"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AoC24-Day13&body=Check out this article: http://github.com/WR104/2024/12/13/AoC24-Day13/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&name=AoC24-Day13&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2024/12/13/AoC24-Day13/&t=AoC24-Day13"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%94-Day-13-Claw-Contraption-%E2%80%94"><span class="toc-number">1.</span> <span class="toc-text">— Day 13: Claw Contraption —</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        AoC24-Day13
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Zhenyu Jia</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-12-13T17:39:48.000Z" itemprop="datePublished">2024-12-13</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/Blog/categories/AdventofCode/">AdventofCode</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/Blog/tags/code/" rel="tag">code</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="—-Day-13-Claw-Contraption-—"><a href="#—-Day-13-Claw-Contraption-—" class="headerlink" title="— Day 13: Claw Contraption —"></a>— Day 13: Claw Contraption —</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://adventofcode.com/2024/day/9">https://adventofcode.com/2024/day/9</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;day13.in&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    lines = file.readlines()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> gcd, floor, ceil</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Claw = namedtuple(<span class="string">&#x27;Claw&#x27;</span>, [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;p&#x27;</span>])</span><br><span class="line">data = []</span><br><span class="line">P2 = <span class="number">10000000000000</span></span><br><span class="line">L = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(lines), <span class="number">4</span>):</span><br><span class="line">    Ax = <span class="built_in">int</span>(lines[i].split(<span class="string">&quot;X+&quot;</span>)[<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>])</span><br><span class="line">    Ay = <span class="built_in">int</span>(lines[i].split(<span class="string">&quot;Y+&quot;</span>)[<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>])</span><br><span class="line">    Bx = <span class="built_in">int</span>(lines[i+<span class="number">1</span>].split(<span class="string">&quot;X+&quot;</span>)[<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>])</span><br><span class="line">    By = <span class="built_in">int</span>(lines[i+<span class="number">1</span>].split(<span class="string">&quot;Y+&quot;</span>)[<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>]) </span><br><span class="line">    Px = <span class="built_in">int</span>(lines[i+<span class="number">2</span>].split(<span class="string">&quot;X=&quot;</span>)[<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>]) </span><br><span class="line">    Py = <span class="built_in">int</span>(lines[i+<span class="number">2</span>].split(<span class="string">&quot;Y=&quot;</span>)[<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>])</span><br><span class="line">    data.append(Claw(a=(Ax, Ay), b=(Bx, By), p=(Px, Py)))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">extended_gcd</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> (a, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        g, x1, y1 = extended_gcd(b, a % b)</span><br><span class="line">        <span class="keyword">return</span> (g, y1, x1 - (a // b) * y1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_min_cost</span>(<span class="params">ax, ay, bx, by, px, py</span>):</span><br><span class="line">    D = ax * by - ay * bx  <span class="comment"># Determinant</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> D == <span class="number">0</span>:</span><br><span class="line">        <span class="comment"># Check for consistency</span></span><br><span class="line">        <span class="keyword">if</span> (px * by - py * bx) != <span class="number">0</span> <span class="keyword">or</span> (ax * py - ay * px) != <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># Inconsistent system</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Dependent system, infinitely many solutions</span></span><br><span class="line">        <span class="comment"># Solve ax*A + bx*B = px</span></span><br><span class="line">        g = gcd(ax, bx)</span><br><span class="line">        <span class="keyword">if</span> px % g != <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># No integer solution exists</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Find a particular solution</span></span><br><span class="line">        g, x0, y0 = extended_gcd(ax, bx)</span><br><span class="line">        factor = px // g</span><br><span class="line">        A0 = x0 * factor</span><br><span class="line">        B0 = y0 * factor</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># General solution: A = A0 + k*(bx/g), B = B0 - k*(ax/g)</span></span><br><span class="line">        t_x = bx // g</span><br><span class="line">        t_y = ax // g</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Determine the range of k values that keep A and B non-negative</span></span><br><span class="line">        <span class="keyword">if</span> t_x == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> A0 &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                k_min = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            k_min = ceil(-A0 / t_x)</span><br><span class="line">            k_min = <span class="built_in">max</span>(k_min, <span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> t_y == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> B0 &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                k_max = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            k_max = floor(B0 / t_y)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> k_min &gt; k_max:</span><br><span class="line">            <span class="comment"># No valid k exists</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Determine k that minimizes 3A + B</span></span><br><span class="line">        coefficient = <span class="number">3</span> * t_x - t_y</span><br><span class="line">        <span class="keyword">if</span> coefficient &gt; <span class="number">0</span>:</span><br><span class="line">            k_best = k_min</span><br><span class="line">        <span class="keyword">elif</span> coefficient &lt; <span class="number">0</span>:</span><br><span class="line">            k_best = k_max</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            k_best = k_min  <span class="comment"># Any k in [k_min, k_max] gives the same cost</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Compute the corresponding A and B</span></span><br><span class="line">        A = A0 + k_best * t_x</span><br><span class="line">        B = B0 - k_best * t_y</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> A &lt; <span class="number">0</span> <span class="keyword">or</span> B &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Calculate the cost</span></span><br><span class="line">        cost = <span class="number">3</span> * A + B</span><br><span class="line">        <span class="keyword">return</span> cost</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># Non-zero determinant, unique solution</span></span><br><span class="line">        Dx = px * by - py * bx</span><br><span class="line">        Dy = ax * py - ay * px</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Adjust signs if D is negative</span></span><br><span class="line">        <span class="keyword">if</span> D &lt; <span class="number">0</span>:</span><br><span class="line">            D = -D</span><br><span class="line">            Dx = -Dx</span><br><span class="line">            Dy = -Dy</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Check if Dx and Dy are divisible by D</span></span><br><span class="line">        <span class="keyword">if</span> Dx % D != <span class="number">0</span> <span class="keyword">or</span> Dy % D != <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># No integer solution exists</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        A0 = Dx // D</span><br><span class="line">        B0 = Dy // D</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> A0 &gt;= <span class="number">0</span> <span class="keyword">and</span> B0 &gt;= <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># Valid solution</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">3</span> * A0 + B0</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Find general solution: A = A0 + k*(bx/g), B = B0 - k*(ax/g)</span></span><br><span class="line">        g = gcd(ax, bx)</span><br><span class="line">        t_x = bx // g</span><br><span class="line">        t_y = ax // g</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Determine the range of k values that keep A and B non-negative</span></span><br><span class="line">        <span class="keyword">if</span> t_x == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> A0 &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                k_min = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            k_min = ceil(-A0 / t_x)</span><br><span class="line">            k_min = <span class="built_in">max</span>(k_min, <span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> t_y == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> B0 &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                k_max = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            k_max = floor(B0 / t_y)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> k_min &gt; k_max:</span><br><span class="line">            <span class="comment"># No valid k exists</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Determine k that minimizes 3A + B</span></span><br><span class="line">        coefficient = <span class="number">3</span> * t_x - t_y</span><br><span class="line">        <span class="keyword">if</span> coefficient &gt; <span class="number">0</span>:</span><br><span class="line">            k_best = k_min</span><br><span class="line">        <span class="keyword">elif</span> coefficient &lt; <span class="number">0</span>:</span><br><span class="line">            k_best = k_max</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            k_best = k_min  <span class="comment"># Any k in [k_min, k_max] gives the same cost</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Compute the corresponding A and B</span></span><br><span class="line">        A = A0 + k_best * t_x</span><br><span class="line">        B = B0 - k_best * t_y</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> A &lt; <span class="number">0</span> <span class="keyword">or</span> B &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Calculate the cost</span></span><br><span class="line">        cost = <span class="number">3</span> * A + B</span><br><span class="line">        <span class="keyword">return</span> cost</span><br><span class="line">p1 = <span class="number">0</span></span><br><span class="line">p2 = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> idx, d <span class="keyword">in</span> <span class="built_in">enumerate</span>(data):</span><br><span class="line">    ax, ay = d.a</span><br><span class="line">    bx, by = d.b</span><br><span class="line">    px, py = d.p</span><br><span class="line"></span><br><span class="line">    tokens = sys.maxsize</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> ax*i &lt;= px <span class="keyword">and</span> ay*i &lt;= py:</span><br><span class="line">        <span class="keyword">if</span> (px-ax * i) % bx == <span class="number">0</span> <span class="keyword">and</span> (py-ay * i) % by == <span class="number">0</span>:</span><br><span class="line">            ta_x = (px-ax*i) // bx</span><br><span class="line">            ta_y = (py-ay*i) // by</span><br><span class="line">            <span class="keyword">if</span> ta_x == ta_y <span class="keyword">and</span> ta_x &gt;= <span class="number">0</span>:</span><br><span class="line">                tokens = <span class="built_in">min</span>(i*<span class="number">3</span> + ta_x, tokens)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> tokens != sys.maxsize:</span><br><span class="line">        p1 += tokens</span><br><span class="line">    </span><br><span class="line">    px += <span class="number">10000000000000</span></span><br><span class="line">    py += <span class="number">10000000000000</span></span><br><span class="line">    cost = find_min_cost(ax, ay, bx, by, px, py)</span><br><span class="line">    <span class="keyword">if</span> cost <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        p2 += cost</span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(p1)</span><br><span class="line"><span class="built_in">print</span>(p2)</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/Blog/">Home</a></li>
+         
+          <li><a href="/Blog/about/">About</a></li>
+         
+          <li><a href="/Blog/archives/">Posts</a></li>
+         
+          <li><a href="http://github.com/WR104">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%94-Day-13-Claw-Contraption-%E2%80%94"><span class="toc-number">1.</span> <span class="toc-text">— Day 13: Claw Contraption —</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://github.com/WR104/2024/12/13/AoC24-Day13/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&text=AoC24-Day13"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&is_video=false&description=AoC24-Day13"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AoC24-Day13&body=Check out this article: http://github.com/WR104/2024/12/13/AoC24-Day13/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&title=AoC24-Day13"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://github.com/WR104/2024/12/13/AoC24-Day13/&name=AoC24-Day13&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://github.com/WR104/2024/12/13/AoC24-Day13/&t=AoC24-Day13"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025
+    Zhenyu Jia
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/Blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/Blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/Blog/archives/">Posts</a></li><!--
+     --><!--
+       --><li><a href="http://github.com/WR104">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/Blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
